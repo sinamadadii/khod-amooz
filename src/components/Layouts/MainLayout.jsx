@@ -4,6 +4,7 @@ import Footer from './../common/Footer';
 import TopNav from './../common/TopNav';
 import Header from './../common/Header';
 import { withRouter } from 'react-router-dom'
+import Archive from './../common/Archive';
 
 const MainLayout = (props) => {
     const { pathname } = props.location;
@@ -24,6 +25,7 @@ const MainLayout = (props) => {
             <main id="home-page">
                 <div className="container">
                     {props.children}
+                    {pathname === '/archive' ? <Archive /> : null}
                 </div>
             </main>
 
