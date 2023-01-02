@@ -5,10 +5,9 @@ const Header = () => {
         <React.Fragment>
 
             <header>
-                <a href="" className="logo"><img src="images/logo.png" /></a>
-                <h1> با اساتید مجرب و کارآزموده در خودآموز </h1>
+                <a href="" className="logo"><img src="images/logo.png" alt='' /></a>
+                <h2> باخودآموز </h2>
                 <h2> آموزش ببینید ، تجربه کسب کنید و بازار کار شوید </h2>
-                <h3> با کمترین هزینه خودت یاد بگیر </h3>
             </header>
             <div className="search-form">
                 <form>
