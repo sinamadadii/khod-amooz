@@ -112,7 +112,7 @@ form button {
 }
 .landing-layer nav ul li a:hover,
 .landing-layer nav .clientarea a:hover {
-    color: #20991d;
+    color: lime;
 }
 .landing-layer header {
     padding: 50px 0;
@@ -159,7 +159,7 @@ form button {
     color: #2c373b;
 }
 .landing-layer .search-form form button {
-    background-color: #2aaf27;
+    background-color: lime;
     color: #fff;
     font-size: 24px;
     width: 50px;
@@ -183,7 +183,7 @@ form button {
     background-color: #2c373b;
 }
 .main-menu {
-    background-color: #2aaf27;
+    background-color: lime;
     position: relative;
 }
 .main-menu nav {
@@ -433,7 +433,7 @@ main#home-page {
     color: #2aaf27;
 }
 .terms-items .term-col article span {
-    color: #2aaf27;
+    color: #0018ff;
     padding: 10px;
     border-top: 1px solid #ebebeb;
     width: 100%;
