@@ -5,6 +5,7 @@ import TopNav from './../common/TopNav';
 import Header from './../common/Header';
 import { withRouter } from 'react-router-dom'
 import Archive from './../common/Archive';
+import Course from './../common/Course';
 
 const MainLayout = (props) => {
     const { pathname } = props.location;
@@ -26,6 +27,7 @@ const MainLayout = (props) => {
                 <div className="container">
                     {props.children}
                     {pathname === '/archive' ? <Archive /> : null}
+                    {pathname === '/course' ? <Course /> : null}
                 </div>
             </main>
 

@@ -209,7 +209,7 @@ form button {
 .main-menu nav > ul > li > a {
     color: #fff;
     padding: 0 15px;
-    border-left: 1px solid #20991d;
+    border-left: 1px solid blue;
     font-size: 16px;
 }
 .main-menu nav > ul > li:last-child > a {
@@ -219,7 +219,7 @@ form button {
     position: absolute;
     top: 50px;
     right: 0;
-    background-color: #2aaf27;
+    background-color: lime;
     padding: 5px 10px;
     border-bottom: 3px solid #0c740a;
     min-width: 230px;
@@ -403,7 +403,7 @@ main#home-page {
     color: #4b4f4f;
 }
 .terms-items header a:hover {
-    color: #2aaf27;
+    color: lime;
 }
 .terms-items .term-col article {
     width: 100%;
@@ -430,7 +430,7 @@ main#home-page {
     white-space: nowrap;
 }
 .terms-items .term-col article h2 a:hover {
-    color: #2aaf27;
+    color: lime;
 }
 .terms-items .term-col article span {
     color: #0018ff;
@@ -545,7 +545,7 @@ main#home-page {
     color: #222;
 }
 .user-account aside > section .inner ul li a:hover {
-    color: #2aaf27;
+    color: lime;
 }
 .user-account .user-account-content {
     border: 1px solid #ecf1f8;
@@ -566,7 +566,7 @@ main#home-page {
 .user-account .user-account-content .inner .account-information h3 {
     font-size: 17px;
     margin-bottom: 10px;
-    color: #2aaf27;
+    color: lime;
 }
 .user-account .user-account-content .inner .account-information ul li {
     display: block;
@@ -670,7 +670,7 @@ main#home-page {
     line-height: 48px;
     text-align: center;
     display: block;
-    background-color: #2aaf27;
+    background-color: lime;
     color: #fff;
     font-size: 17px;
     margin-top: 25px;
@@ -788,7 +788,7 @@ main#home-page {
     width: auto;
     display: inline-table;
     line-height: 22px;
-    color: #2aaf27;
+    color: lime;
     font-style: normal;
     padding: 0 10px;
     float: right;
@@ -907,7 +907,7 @@ main#home-page {
     line-height: 25px;
 }
 .term-categories > .top-bar > header h1 span {
-    color: #2aaf27;
+    color: lime;
 }
 .term-categories > .top-bar > header > span {
     position: absolute;
@@ -997,7 +997,7 @@ main#home-page {
     cursor: pointer;
 }
 .term-categories .switch-field input:checked + label {
-    background-color: #2aaf27;
+    background-color: lime;
     color: #fff;
 }
 .term-categories .aside-section header h3 {
@@ -1070,7 +1070,7 @@ main#home-page {
         white-space: nowrap;
         right: 0;
         top: 44px;
-        background-color: #2aaf27;
+        background-color: lime;
         border-bottom: 3px solid #0c740a;
         padding: 10px 15px 15px;
         z-index: 1000;
