@@ -1,5 +1,5 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-
 
 
 
@@ -23,8 +23,24 @@ const Register = () => {
             email,
             password
         }
-        console.log(user);
-        reset();
+
+        axios
+            .post(
+                'https://toplearnapi.ghorbany.dev/api/register',
+                JSON.stringify(user),
+                {
+                    headers: {
+                        "content-type": "application/json"
+                    }
+                }
+            )
+            .then(response => {
+                console.log(response);
+                reset();
+            })
+            .catch(er => console.log(er));
+
+        // console.log(user);
     }
 
     return (
