@@ -8,8 +8,8 @@ const Header = () => {
                 <a href="" className="logo">
                     {/* <img src="images/logo.png" alt='' /> */}
                 </a>
-                <h2> باخودآموز </h2>
-                <h2> آموزش ببینید ، تجربه کسب کنید و بازار کار شوید </h2>
+                <h1> باخودآموز </h1>
+                <h2> آموزش ببینید ، تجربه کسب کنید و وارد بازار کار شوید </h2>
             </header>
             <div className="search-form">
                 <form>

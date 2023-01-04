@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+
 
 
 const Register = () => {
+
+    const [fullname, setFullname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const reset = () => {
+        setFullname('');
+        setEmail('');
+        setPassword('');
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        // alert('submited')
+        const user = {
+            fullname,
+            email,
+            password
+        }
+        console.log(user);
+        reset();
+    }
+
     return (
         <main className="client-page">
             <div className="container-content">
@@ -10,21 +35,44 @@ const Register = () => {
 
                 <div className="form-layer">
 
-                    <form action="" method="">
+                    <form action="" method="" onSubmit={handleSubmit}>
 
                         <div className="input-group">
                             <span className="input-group-addon" id="username"><i className="zmdi zmdi-account"></i></span>
-                            <input type="text" className="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username" />
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="نام و نام خانوادگی"
+                                aria-describedby="username"
+                                value={fullname}
+                                onChange={e => setFullname(e.target.value)}
+                            />
                         </div>
 
                         <div className="input-group">
                             <span className="input-group-addon" id="email-address"><i className="zmdi zmdi-email"></i></span>
-                            <input type="text" className="form-control" placeholder="ایمیل" aria-describedby="email-address" />
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="ایمیل"
+                                aria-describedby="email-address"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+
+                            />
                         </div>
 
                         <div className="input-group">
                             <span className="input-group-addon" id="password"><i className="zmdi zmdi-lock"></i></span>
-                            <input type="text" className="form-control" placeholder="رمز عبور " aria-describedby="password" />
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="رمز عبور "
+                                aria-describedby="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+
+                            />
                         </div>
 
                         <div className="accept-rules">
