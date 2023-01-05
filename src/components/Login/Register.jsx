@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 
@@ -26,7 +27,7 @@ const Register = () => {
 
         axios
             .post(
-                'https://toplearnapi.ghorbany.dev/api/register',
+                "http://localhost:4000",
                 JSON.stringify(user),
                 {
                     headers: {
@@ -34,15 +35,26 @@ const Register = () => {
                     }
                 }
             )
-            .then(response => {
-                console.log(response);
-                reset();
+            .then(({ data, status }) => {
+                if (status === 201) {
+                    toast.success('ساخته شد', {
+                        position: 'top-right',
+                        closeOnClick: true
+                    });
+                    console.log(data);
+                    console.log(status);
+                    reset();
+                }
             })
-            .catch(er => console.log(er));
-
-        // console.log(user);
-    }
-
+            .catch(er => {
+                toast.error('مشکل', {
+                    position: 'top-right',
+                    closeOnClick: true
+                });
+                console.log(er);
+            });
+        console.log(user);
+    };
     return (
         <main className="client-page">
             <div className="container-content">
