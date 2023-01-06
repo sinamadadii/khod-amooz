@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { registerUser } from './../../services/userService';
 
 
 
@@ -16,7 +17,7 @@ const Register = () => {
         setPassword('');
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
         // alert('submited')
         const user = {
@@ -25,35 +26,43 @@ const Register = () => {
             password
         }
 
-        axios
-            .post(
-                "http://localhost:4000",
-                JSON.stringify(user),
-                {
-                    headers: {
-                        "content-type": "application/json"
-                    }
-                }
-            )
-            .then(({ data, status }) => {
-                if (status === 201) {
-                    toast.success('ساخته شد', {
-                        position: 'top-right',
-                        closeOnClick: true
-                    });
-                    console.log(data);
-                    console.log(status);
-                    reset();
-                }
-            })
-            .catch(er => {
-                toast.error('مشکل', {
+        try {
+            const { status } = await registerUser(user)
+            if (status === 201) {
+                toast.success('ساخته شد', {
                     position: 'top-right',
                     closeOnClick: true
                 });
-                console.log(er);
+                reset();
+            }
+
+        } catch (ex) {
+            toast.error('مشکل', {
+                position: 'top-right',
+                closeOnClick: true
             });
-        console.log(user);
+            console.log(ex);
+        }
+
+        //     .then(({ data, status }) => {
+        //         if (status === 201) {
+        //             toast.success('ساخته شد', {
+        //                 position: 'top-right',
+        //                 closeOnClick: true
+        //             });
+        //             console.log(data);
+        //             console.log(status);
+        //             reset();
+        //         }
+        //     })
+        //     .catch(er => {
+        //         toast.error('مشکل', {
+        //             position: 'top-right',
+        //             closeOnClick: true
+        //         });
+        //         console.log(er);
+        //     });
+        // console.log(user);
     };
     return (
         <main className="client-page">
