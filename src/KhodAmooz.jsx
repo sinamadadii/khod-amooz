@@ -13,7 +13,7 @@ const KhodAmooz = (props) => {
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
                 <Route path='/archive' component={Archive} />
-                <Route path='/course' component={Course} />
+                <Route path='/course/:id' component={Course} />
                 <Route path='/' exact component={Courses} />
             </Switch>
         </MainLayout>
