@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { toast } from 'react-toastify';
-import { registerUser } from './../../services/userService';
 
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import { register, registerr, registerUser } from './../../services/userService';
 
 
 const Register = () => {
@@ -17,57 +17,67 @@ const Register = () => {
         setPassword('');
     }
 
+    // const handleSubmit = async event => {
+    //     event.preventDefault();
+    //     // alert('submited')
+    //     const user = {
+    //         fullname,
+    //         email,
+    //         password
+    //     }
+    //     console.log('success');
+
+    //     axios
+    //         .post(`https://toplearnapi.ghorbany.dev/api/register`,
+    //             JSON.stringify(user),
+    //         )
+    //         .then((result) => {
+    //             console.log(result);
+    //             return result
+    //         }).catch((err) => {
+    //             console.log(err);
+    //             return err
+    //         });
+    // };
     const handleSubmit = async event => {
         event.preventDefault();
-        // alert('submited')
         const user = {
             fullname,
             email,
             password
-        }
+        };
 
         try {
-            const { status } = await registerUser(user)
+
+            const { status } = await registerUser(user);
             if (status === 201) {
-                toast.success('ساخته شد', {
-                    position: 'top-right',
+                toast.success("کاربر با موفقیت ساخته شد.", {
+                    position: "top-right",
                     closeOnClick: true
                 });
                 reset();
             }
 
         } catch (ex) {
-            toast.error('مشکل', {
-                position: 'top-right',
+            toast.error("مشکلی پیش آمده.", {
+                position: "top-right",
                 closeOnClick: true
             });
             console.log(ex);
         }
-
-        //     .then(({ data, status }) => {
-        //         if (status === 201) {
-        //             toast.success('ساخته شد', {
-        //                 position: 'top-right',
-        //                 closeOnClick: true
-        //             });
-        //             console.log(data);
-        //             console.log(status);
-        //             reset();
-        //         }
-        //     })
-        //     .catch(er => {
-        //         toast.error('مشکل', {
-        //             position: 'top-right',
-        //             closeOnClick: true
-        //         });
-        //         console.log(er);
-        //     });
-        // console.log(user);
     };
+
+
+    const [posts, setpost] = useState([]);
+
     return (
+
+
         <main className="client-page">
             <div className="container-content">
-
+                {/* {posts.map((post, i) => (
+                    <h2 key={i} ></h2>
+                ))} */}
                 <header><h2> عضویت در سایت </h2></header>
 
                 <div className="form-layer">
@@ -121,13 +131,23 @@ const Register = () => {
                             <a href=""> <i className="zmdi zmdi-account"></i> ورود به سایت </a>
                         </div>
 
-                        <button className="btn btn-success"> عضویت در سایت </button>
+                        <button className="btn btn-success" onClick={handleSubmit}> عضویت در سایت </button>
 
                     </form>
                 </div>
 
             </div>
         </main>
+
+
+
+
+
+
+
+
+
+
     );
 }
 

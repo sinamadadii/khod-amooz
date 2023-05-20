@@ -1,39 +1,40 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { loginUser } from '../../services/userService';
+import { login, loginUser } from '../../services/userService';
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const reset = () => {
+        setEmail('');
+        setPassword('');
+    }
     const handleSubmit = async event => {
         event.preventDefault();
         const user = { email, password };
 
-        const reset = () => {
-            setEmail('');
-            setPassword('');
-        }
-
         try {
+
             const { status, data } = await loginUser(user);
             if (status === 200) {
-                toast.success('ورود موفق', {
-                    position: 'top-right',
+                toast.success("ورود موفقیت آمیز بود.", {
+                    position: "top-right",
                     closeOnClick: true
                 });
-                console.log(data);
+                localStorage.setItem("token", data.token);
                 reset();
             }
 
-        } catch (error) {
-            console.log(error);
-            toast.error('ورود نا موفق', {
-                position: 'top-right',
+        } catch (ex) {
+            console.log(ex);
+            toast.error("مشکلی پیش آمده.", {
+                position: "top-right",
                 closeOnClick: true
             });
         }
-    }
+    };
 
     return (
         <main className="client-page">
