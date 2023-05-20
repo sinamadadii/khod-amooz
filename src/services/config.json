@@ -1,4 +1,4 @@
 {
     "toplearnapi": "https://toplearnapi.ghorbany.dev",
-    "localapi": "localhost:4000"
+    "localapi": "http://localhost:4000"
 }

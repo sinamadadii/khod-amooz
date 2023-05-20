@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MainNav from './../common/MainNav';
 import Footer from './../common/Footer';
 import TopNav from './../common/TopNav';
