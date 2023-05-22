@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 import React, { useEffect, useState } from 'react';
+import { ScaleLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
-import { register, registerr, registerUser } from './../../services/userService';
+import { registerUser } from './../../services/userService';
 
 
 const Register = () => {
@@ -17,28 +18,6 @@ const Register = () => {
         setPassword('');
     }
 
-    // const handleSubmit = async event => {
-    //     event.preventDefault();
-    //     // alert('submited')
-    //     const user = {
-    //         fullname,
-    //         email,
-    //         password
-    //     }
-    //     console.log('success');
-
-    //     axios
-    //         .post(`https://toplearnapi.ghorbany.dev/api/register`,
-    //             JSON.stringify(user),
-    //         )
-    //         .then((result) => {
-    //             console.log(result);
-    //             return result
-    //         }).catch((err) => {
-    //             console.log(err);
-    //             return err
-    //         });
-    // };
     const handleSubmit = async event => {
         event.preventDefault();
         const user = {
@@ -48,7 +27,6 @@ const Register = () => {
         };
 
         try {
-
             const { status } = await registerUser(user);
             if (status === 201) {
                 toast.success("کاربر با موفقیت ساخته شد.", {
@@ -57,7 +35,6 @@ const Register = () => {
                 });
                 reset();
             }
-
         } catch (ex) {
             toast.error("مشکلی پیش آمده.", {
                 position: "top-right",
@@ -67,13 +44,9 @@ const Register = () => {
         }
     };
 
-
-    const [posts, setpost] = useState([]);
-
     return (
-
-
         <main className="client-page">
+            {/* <ScaleLoader color="#36d7b7" /> */}
             <div className="container-content">
                 {/* {posts.map((post, i) => (
                     <h2 key={i} ></h2>

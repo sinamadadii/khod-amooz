@@ -1,12 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-import { login, loginUser } from '../../services/userService';
-
+import { loginUser } from '../../services/userService';
 const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const reset = () => {
         setEmail('');
         setPassword('');
@@ -24,6 +22,8 @@ const Login = (props) => {
                     closeOnClick: true
                 });
                 localStorage.setItem("token", data.token);
+                console.log(data)
+                props.history.replace("/")
                 reset();
             }
 
@@ -82,6 +82,7 @@ const Login = (props) => {
                         <button className="btn btn-success"> ورود به سایت </button>
 
                     </form>
+
                 </div>
 
             </div>
